@@ -10,6 +10,7 @@ import axios from 'axios';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod'
 import { createIssueSchema } from '@/app/validationSchemas';
+import ErrorMessage from '@/app/components/ErrorMessage';
 
 const SimpleMDE = dynamic(() => import("react-simplemde-editor"), { ssr: false });
 
@@ -53,14 +54,14 @@ const NewIssuePage = () => {
       >
 
         <TextField.Root placeholder='Title' {...register('title')}/>
-        {errors.title && <Text color='red' as='p'>{errors.title.message}</Text>}
+        <ErrorMessage>{errors.title?.message}</ErrorMessage>
 
         {isClient && <Controller
           name='description'
           control={control}
           render={({field}) => <SimpleMDE placeholder="Description" {...field} />}
         />}
-        {errors.description && <Text color='red' as='p'>{errors.description.message}</Text>}
+        <ErrorMessage>{errors.description?.message}</ErrorMessage>
 
         <Button>Submit New Issue</Button>
       </form>

@@ -1,10 +1,10 @@
+import { Theme } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
-import "./theme-config.css";
 import type { Metadata } from "next";
-import "./globals.css";
 import { Inter } from "next/font/google";
-import { Theme, ThemePanel } from "@radix-ui/themes";
+import "./globals.css";
 import NavBar from "./NavBar";
+import "./theme-config.css";
 
 
 const inter = Inter({

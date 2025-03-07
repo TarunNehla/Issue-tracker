@@ -1,6 +1,5 @@
 import { IssueSchema } from "@/app/validationSchemas";
 import { prisma } from "@/prisma/client";
-import delay from "delay";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function PATCH(request : NextRequest, { params }: { params: Promise<{ id: string }> }){
@@ -38,7 +37,6 @@ export async function DELETE(request : NextRequest, { params }: { params: Promis
         where : {id : parseInt(id)}
     })
 
-    await delay(2000);
     if(!issue)
         return NextResponse.json('Invalid Issue request', {status : 404})
 

@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import React from 'react'
+import { Skeleton } from '@/app/components'
 import { AiFillBug } from "react-icons/ai";
 import { usePathname } from 'next/navigation';
 import classNames from 'classnames';
@@ -34,7 +35,7 @@ const AuthStatus = () => {
     const { status , data : session } = useSession()
 
     if(status=== 'loading')
-        return null
+        return <Skeleton width='3rem' />
 
     if( status === 'unauthenticated')
         return <Link className='text-zinc-500 hover:text-zinc-800 transition-colors' href='/api/auth/signin'>

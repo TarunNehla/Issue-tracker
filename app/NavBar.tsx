@@ -44,9 +44,18 @@ const NavBar = () => {
                     {status === 'authenticated' &&
                     (<DropdownMenu.Root>
                         <DropdownMenu.Trigger>
-                            <button className="bg-transparent border-none p-0 m-0 rounded-full focus:outline-none focus:ring-0">
-                                <Avatar src={session?.user?.image || ''} fallback='?' radius='full' size='2' className='cursor-pointer'/>
-                            </button>
+                            {/* <button className="bg-transparent border-none p-0 m-0 rounded-full focus:outline-none focus:ring-0">
+                                
+                            </button> */}
+
+                            <Avatar 
+                                src={session?.user?.image || ''} 
+                                fallback='?' 
+                                radius='full' 
+                                size='2' 
+                                className='cursor-pointer'
+                                referrerPolicy='no-referrer'
+                            />
                         </DropdownMenu.Trigger>
                         <DropdownMenu.Content>
                             <DropdownMenu.Label>

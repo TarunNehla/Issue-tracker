@@ -3,6 +3,7 @@ import IssueActions from './IssueActions'
 import Pagination from '../components/Pagination'
 import IssueTable, { columnNames, IssueQuery } from './IssueTable'
 import { Flex } from '@radix-ui/themes'
+import { Metadata } from 'next'
 
 
 interface Props{
@@ -39,6 +40,11 @@ const IssuesPage = async ({ searchParams }: Props) => {
       <Pagination currentPage={page} pageSize={pageSize} itemCount={issuesCount} />
     </Flex>
   )
+}
+
+export const metadata: Metadata = {
+  title: 'Issue Tracker - Issues List',
+  description: 'View all project issues'
 }
 
 

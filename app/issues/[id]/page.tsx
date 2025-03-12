@@ -9,7 +9,6 @@ import authOptions from '@/app/auth/authOptions'
 import AssigneeSelect from './AssigneeSelect'
 
 
-
 const IssueDetailPage = async ({params}: {params: Promise<{ id: string }>}) => {
     const { id } = await params;
     const issue = await prisma.issue.findUnique({
@@ -35,6 +34,16 @@ const IssueDetailPage = async ({params}: {params: Promise<{ id: string }>}) => {
         </Box>}
     </Grid>
   )
+}
+
+export async function generateMetadata({params}: {params: Promise<{ id: string }>}) {
+    const { id } = await params;
+    const issue = await prisma.issue.findUnique({ where : { id: parseInt(id) }});
+
+    return {
+        title: issue?.title,
+        description: 'Details of issue' + issue?.id
+    }
 }
 
 export default IssueDetailPage

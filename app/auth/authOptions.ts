@@ -12,7 +12,7 @@ const authOptions: NextAuthOptions = {
         })
     ],
     callbacks: {
-        async redirect({ url, baseUrl }) {
+        async redirect({ baseUrl }) {
             const base = process.env.NEXTAUTH_URL || baseUrl;
             return `${base}`;
         },

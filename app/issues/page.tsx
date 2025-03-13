@@ -1,9 +1,10 @@
 import { prisma } from '@/prisma/client'
 import IssueActions from './IssueActions'
 import Pagination from '../components/Pagination'
-import IssueTable, { columnNames, IssueQuery } from './IssueTable'
+import IssueTable, { IssueQuery } from './IssueTable'
 import { Flex } from '@radix-ui/themes'
 import { Metadata } from 'next'
+import { columnNames } from './columnDefinitions'
 
 
 interface Props{

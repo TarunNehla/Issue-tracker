@@ -18,6 +18,7 @@ const DeleteIssueButton = ( { issueId } : { issueId: number} ) => {
             await axios.delete('/api/issues/'+issueId)
             router.push('/issues')
         } catch (error) {
+            console.error('error deleting issue', error);
             setIsDeleting(false);
             setError(true);
         }
@@ -35,7 +36,7 @@ const DeleteIssueButton = ( { issueId } : { issueId: number} ) => {
             <AlertDialog.Content>
                 <AlertDialog.Title>Confirm Deletion</AlertDialog.Title>
                 <AlertDialog.Description>
-                    Are you sure you want to delete this issue ? This action can't be undone.
+                    Are you sure you want to delete this issue ? This action can&apos;t be undone.
                 </AlertDialog.Description>
 
                 <Flex gap='3' mt='4'>

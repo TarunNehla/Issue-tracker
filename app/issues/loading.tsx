@@ -4,12 +4,12 @@ import IssueActions from './IssueActions'
 
 const LoadingIssuePage = () => {
 
-    const issues = [1,2,3];
+    const issues = [1,2,3,4,5,6,7,8];
 
   return (
     <div>
         <IssueActions/>
-        <Table.Root variant='surface'>
+        <Table.Root variant='surface' className='mt-3'>
         <Table.Header>
           <Table.Row>
             <Table.ColumnHeaderCell>Issues</Table.ColumnHeaderCell>

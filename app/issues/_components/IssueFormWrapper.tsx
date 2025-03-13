@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import IssueFormSkeleton from './IssueFormSkeleton';
+import { Issue } from '@prisma/client';
 
 const IssueForm = dynamic(
   () => import('@/app/issues/_components/IssueForm'),
@@ -11,7 +12,7 @@ const IssueForm = dynamic(
   }
 );
 
-const IssueFormWrapper = ({ issue }: { issue?: any }) => {
+const IssueFormWrapper = ({ issue }: { issue?: Issue }) => {
   return <IssueForm issue={issue} />;
 };
 
